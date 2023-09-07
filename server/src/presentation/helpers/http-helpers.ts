@@ -14,8 +14,3 @@ export const badRequest = (data: any): HttpResponse => ({
 export const noContent = (): HttpResponse => ({
   statusCode: 204
 });
-
-export const ok = (result: any): HttpResponse => ({
-  statusCode: 200,
-  body: result
-});
