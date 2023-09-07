@@ -1,1 +1,1 @@
-export * from "./find-all";
+export * from "./validate-product";

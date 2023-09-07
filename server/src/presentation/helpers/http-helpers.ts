@@ -1,4 +1,4 @@
-import { NotFoundError, ServerError } from "../errors";
+import { ServerError } from "../errors";
 import { HttpResponse } from "../protocols";
 
 export const serverError = (): HttpResponse => ({
@@ -6,14 +6,9 @@ export const serverError = (): HttpResponse => ({
   body: new ServerError()
 });
 
-export const badRequest = (error: Error): HttpResponse => ({
+export const badRequest = (data: any): HttpResponse => ({
   statusCode: 400,
-  body: error
-});
-
-export const notFound = (entity: any): HttpResponse => ({
-  statusCode: 404,
-  body: new NotFoundError(entity)
+  body: data
 });
 
 export const noContent = (): HttpResponse => ({
