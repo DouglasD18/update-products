@@ -13,5 +13,21 @@ services:
     volumes:
       - db-volume:/var/lib/mysql
 
+  server:
+    container_name: server
+    build: ./server
+    image: api-server
+    ports:
+      - "3001:3001"
+    command: npm start
+    depends_on:
+      - db
+    environment:
+      APP_PORT: 3001
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_HOST: db
+      DB_PORT: 3306
+
 volumes:
   db-volume:
