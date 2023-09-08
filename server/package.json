@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --runInBand",
+    "test": "jest --watch --runInBand --detectOpenHandles",
     "test:unit": "npm test -- --silent -c jest-unit-config.js",
     "test:integration": "npm test -- --silent -c jest-integration-config.js",
     "test:ci": "npm test -- --coverage"
@@ -24,6 +24,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "dotenv": "^16.3.1",
     "mysql2": "^3.6.0"
   }
 }
