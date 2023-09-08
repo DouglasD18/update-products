@@ -4,7 +4,7 @@ import { Pack, PackDB } from "../../../../domain/models";
 import createConnection from "../../helpers/mysql-helper";
 
 export class FindAllPacksMySqlRepository implements FindAllPacksRepository {
-  async query(): Promise<PackDB[]> {
+  private async query(): Promise<PackDB[]> {
     const query = 'SELECT * FROM packs';
     const connection = await createConnection();
     const [rows] = await connection.execute(query);
