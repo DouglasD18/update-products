@@ -52,22 +52,22 @@ const PRODUCTS: Product[] = [
 
 const PACK_ENERGETICO: Pack = {
   id: 1,
-  pack_id: 1000,
-  product_id: 18,
+  packId: 1000,
+  productId: 18,
   qty: 6
 }
 
 const PACK_1: Pack = {
   id: 2,
-  pack_id: 1010,
-  product_id: 24,
+  packId: 1010,
+  productId: 24,
   qty: 1
 }
 
 const PACK_2: Pack = {
   id: 3,
-  pack_id: 1010,
-  product_id: 26,
+  packId: 1010,
+  productId: 26,
   qty: 1
 }
 

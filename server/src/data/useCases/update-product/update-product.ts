@@ -17,17 +17,17 @@ export class UpdateProductAdapter implements  UpdateProduct {
     const newProduct = { ...oldProduct, ...data };
     await this.updateProductRepository.handle(newProduct);
 
-    const pack = packs.find(pack => pack.product_id === code);
+    const pack = packs.find(pack => pack.productId === code);
     if (pack) {
       const { qty } = pack;
-      const oldPack = products.find(product => product.code === pack.pack_id);
-      const oldPacks = packs.filter(product => product.pack_id === oldPack.code);
+      const oldPack = products.find(product => product.code === pack.packId);
+      const oldPacks = packs.filter(product => product.packId === oldPack.code);
 
       if (oldPacks.length > 1) {
-        const otherProductCode = oldPacks.map(product => product.product_id).find(product => product !== newProduct.code);
+        const otherProductCode = oldPacks.map(product => product.productId).find(product => product !== newProduct.code);
         
         const otherProduct = products.find(product => product.code === otherProductCode);
-        const otherPack = oldPacks.find(element => element.product_id === otherProduct.code);
+        const otherPack = oldPacks.find(element => element.productId === otherProduct.code);
 
         const newPackProduct: Product = {
           code: oldPack.code,

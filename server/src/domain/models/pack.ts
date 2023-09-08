@@ -1,6 +1,6 @@
 export interface Pack {
   id: number;
-  pack_id: number;
-  product_id: number;
+  packId: number;
+  productId: number;
   qty: number;
 }
