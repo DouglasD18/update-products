@@ -17,8 +17,8 @@ export class FindAllMySqlReposiroty implements FindAllRepository {
     const products: Product[] = productsDB.map(product => ({
       code: product.code,
       name: product.name,
-      costPrice: product.cost_price,
-      salesPrice: product.sales_price
+      costPrice: Number(product.cost_price),
+      salesPrice: Number(product.sales_price)
     }))
 
     return products;

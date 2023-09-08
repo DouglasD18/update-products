@@ -10,7 +10,7 @@ export class UpdateProductMySqlRepository implements UpdateProductRepository {
     const query = `UPDATE products
                    SET cost_price = ?, sales_price = ? 
                    WHERE code = ?`;
-    const values = [costPrice, salesPrice, code];
+    const values = [Number(costPrice.toFixed(2)), Number(salesPrice.toFixed(2)), code];
 
     const connection = await createConnection();
     await connection.query(query, values);

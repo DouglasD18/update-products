@@ -17,9 +17,9 @@ export class FindAllPacksMySqlRepository implements FindAllPacksRepository {
     const packs: Pack[] = packsDb.map(pack => ({
       id: pack.id,
       qty: pack.qty,
-      packId: pack.pack_id,
-      productId: pack.product_id
-    }))
+      packId: Number(pack.pack_id),
+      productId: Number(pack.product_id)
+    }));
 
     return packs;
   }
